@@ -1,5 +1,5 @@
 {
-  "name": "sleekdigital.particles",
+  "name": "skrichten.particles",
   "version": "1.1.1",
   "description": "Easy-to-use Particle Systems for THREE.js.",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MageStudio/partykals.git"
+    "url": "git+https://github.com/skrichten/partykals.git"
   },
   "keywords": [
     "webgl",
@@ -26,9 +26,9 @@
   "author": "Ronen Ness",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MageStudio/partykals/issues"
+    "url": "https://github.com/skrichten/partykals/issues"
   },
-  "homepage": "https://github.com/MageStudio/partykals/",
+  "homepage": "https://github.com/skrichten/partykals/",
   "devDependencies": {
     "@babel/cli": "7.5.0",
     "@babel/core": "7.5.0",
