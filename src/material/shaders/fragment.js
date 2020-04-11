@@ -75,7 +75,19 @@ void main()
         
     // no texture (colors only)
     #else
-        gl_FragColor = vec4( globalColor * vColor, vAlpha );
+        
+        #ifdef SOFT
+            vec2 st = gl_PointCoord.xy/1.0;
+            float pct = 0.0;        
+            pct = 1.0-distance(st,vec2(0.5));        
+            float opac = (pct - 0.5) / 1.5;
+            vColor = vec3(opac * vAlpha) * vColor;
+
+            gl_FragColor = vec4( globalColor * vColor, opac * vAlpha );
+        #else
+            gl_FragColor = vec4( globalColor * vColor, vAlpha );
+        #endif        
+        
     #endif
 
     // check if need to discard pixel

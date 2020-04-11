@@ -186,6 +186,7 @@ export default class ParticlesSystem {
             depthTest: defined(options.system.depthTest) ? options.system.depthTest : true,
             perParticleRotation: options.particles.rotating,
             roundShape: options.particles.roundShape,
+            soft: options.particles.soft,
         });
 
         // store material for later usage

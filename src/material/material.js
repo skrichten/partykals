@@ -66,6 +66,9 @@ export default class ParticlesMaterial {
         if (options.roundShape) {
             flags += "#define ROUND_SHAPE\n";
         }
+        if (options.soft) {
+            flags += "#define SOFT\n";
+        }
         flags += "\n";
 
         // create the internal material
