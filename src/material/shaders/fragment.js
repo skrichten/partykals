@@ -3,6 +3,18 @@
  * Author: Ronen Ness.
  * Since: 2019.
  */
+
+ // "Cuts" a circle out of the default square shape
+// by setting the "leftovers" as transparent
+const circleParticleShape = `
+    float r = 0.0, delta = 0.0, alpha = 1.0;
+    vec2 cxy = 2.0 * gl_PointCoord - 1.0;
+    r = dot(cxy, cxy);
+    if (r > 1.0) {
+        discard;
+    }
+`;
+
 export default `
 // material uniforms
 uniform vec3 globalColor;
@@ -25,9 +37,19 @@ varying float vAlpha;
     uniform sampler2D texture;
 #endif
 
+
 // fragment shader main
 void main() 
 {
+    #ifdef ROUND_SHAPE
+        float r = 0.0, delta = 0.0, alpha = 1.0;
+        vec2 cxy = 2.0 * gl_PointCoord - 1.0;
+        r = dot(cxy, cxy);
+        if (r > 1.0) {
+            discard;
+        }
+    #endif
+
     // set default color if don't have per-particle colors
     #ifndef COLORING
         vec3 vColor = vec3(1,1,1);

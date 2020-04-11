@@ -63,6 +63,9 @@ export default class ParticlesMaterial {
         if (options.alphaTest) {
             flags += "#define ALPHA_TEST\n";
         }
+        if (options.roundShape) {
+            flags += "#define ROUND_SHAPE\n";
+        }
         flags += "\n";
 
         // create the internal material
