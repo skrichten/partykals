@@ -185,6 +185,7 @@ export default class ParticlesSystem {
             depthWrite: defined(options.system.depthWrite) ? options.system.depthWrite : true,
             depthTest: defined(options.system.depthTest) ? options.system.depthTest : true,
             perParticleRotation: options.particles.rotating,
+            roundShape: options.particles.roundShape,
         });
 
         // store material for later usage
