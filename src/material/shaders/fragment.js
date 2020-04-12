@@ -81,9 +81,9 @@ void main()
             float pct = 0.0;        
             pct = 1.0-distance(st,vec2(0.5));        
             float opac = (pct - 0.5) / 1.5;
-            vColor = vec3(opac * vAlpha) * vColor;
+            vec3 pColor = vec3(opac * vAlpha) * vColor;
 
-            gl_FragColor = vec4( globalColor * vColor, opac * vAlpha );
+            gl_FragColor = vec4( globalColor * pColor, opac * vAlpha );
         #else
             gl_FragColor = vec4( globalColor * vColor, vAlpha );
         #endif        
